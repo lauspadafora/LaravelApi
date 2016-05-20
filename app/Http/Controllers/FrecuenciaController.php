@@ -17,7 +17,6 @@ class FrecuenciaController extends Controller
      */
     public function index()
     {
-        //$frecuencias = Frecuencia::all();
         $frecuencias = DB::table('frecuencias as f')
             ->leftJoin('users as u1', 'u1.id', '=', 'f.created_by')
             ->leftJoin('users as u2', 'u2.id', '=', 'f.updated_by')

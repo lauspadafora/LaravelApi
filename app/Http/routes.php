@@ -37,5 +37,9 @@ Route::group(['middleware' => 'oauth'], function () {
     Route::get('/frecuencia/show/{id}', 'FrecuenciaController@show')->name('frecuencia.show');
     Route::put('/frecuencia/update/{id}', 'FrecuenciaController@update')->name('frecuencia.update');
     Route::match(['get', 'delete'], '/frecuencia/destroy/{id}', 'FrecuenciaController@destroy')->name('frecuencia.destroy');
+
+	Route::get('/tipogasto/index', 'TipoGastoController@index')->name('tipogasto.index');
+    Route::post('/tipogasto/store', 'TipoGastoController@store')->name('tipogasto.store');
+    Route::get('/tipogasto/show/{id}', 'TipoGastoController@show')->name('tipogasto.show');
 });
 
